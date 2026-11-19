@@ -10,6 +10,20 @@ locals {
   )
 }
 
+# Ensure the gcf-artifacts repository exists in the deployment region.
+# Cloud Functions 1st Gen requires this Docker repository to store built container images.
+resource "google_artifact_registry_repository" "gcf_artifacts" {
+  project       = local.env_project_id
+  location      = var.region
+  repository_id = "gcf-artifacts"
+  description   = "Repository for Cloud Functions container images"
+  format        = "DOCKER"
+
+  depends_on = [
+    google_project_service.required_services
+  ]
+}
+
 module "scheduled_function" {
   source  = "terraform-google-modules/scheduled-function/google"
   version = "~> 6.0"
@@ -35,5 +49,6 @@ module "scheduled_function" {
     google_project_service.required_services,
     google_project_iam_member.gcf_artifact_registry_reader,
     google_project_iam_member.function_sa_artifact_registry_reader,
+    google_artifact_registry_repository.gcf_artifacts,
   ]
 }

@@ -179,7 +179,7 @@ The sample workload deployed by this repository models a production-grade, sched
 
 - [Terraform](https://developer.hashicorp.com/terraform/downloads) `>= 1.5.0`
 - [Google Cloud SDK (`gcloud`)](https://cloud.google.com/sdk/docs/install) authenticated (`gcloud auth application-default login`)
-- A Google Cloud Project (e.g. `gdg-cloud-demo-dev`)
+- A Google Cloud Project (e.g. `gdg-cloud-demo-dev`, or `gdg-cloud-demo-prod`)
 - (Optional) [Gemini CLI](https://github.com/google-gemini/gemini-cli) for AI-driven IaC authoring
 
 ### 1. Clone Repository
