@@ -1,6 +1,6 @@
 locals {
-  # Core project name: adapted by modules to "gdg-devfest-demo-prod"
-  project_id        = var.project_id != null ? var.project_id : "gdg-devfest-demo"
+  # Core project name: adapted by modules to "gdg-cloud-demo-prod"
+  project_id        = var.project_id != null ? var.project_id : "gdg-cloud-demo"
   business_unit     = "datacenter_1"
   environment       = "production"
   environment_short = "prod"

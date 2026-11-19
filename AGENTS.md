@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Welcome to the **GDG DevFest Berlin 2026** speaker session repository: **"Stop Reinventing the Wheel: Building a Secure GCP Foundation with Terraform"**.
+Welcome to the **GDG Cloud Berlin 2026** speaker session repository: **"Stop Reinventing the Wheel: Building a Secure GCP Foundation with Terraform"**.
 
 This document outlines architectural principles, coding conventions, operational workflows, and security guardrails for AI agents (e.g., Gemini CLI, subagents) and human contributors working within this codebase.
 
@@ -94,7 +94,7 @@ When generating or refactoring Terraform code in this repository, agents MUST ad
   | **Pub/Sub Topic** | `top-${business_unit}-${env_short}` | `top-datacenter-1-dev` |
 
 ### 2. Project ID Core Name Adaptation
-- The environment `main.tf` defines the core project identifier (e.g. `project_id = "gdg-devfest-demo"`).
+- The environment `main.tf` defines the core project identifier (e.g. `project_id = "gdg-cloud-demo"`).
 - Reusable modules must adapt this core name to the concrete environment project ID:
   ```hcl
   env_project_id = (
@@ -103,7 +103,7 @@ When generating or refactoring Terraform code in this repository, agents MUST ad
     : "${local.clean_project_id}-${var.env_short}"
   )
   ```
-  Resulting in `gdg-devfest-demo-dev` for development and `gdg-devfest-demo-prod` for production.
+  Resulting in `gdg-cloud-demo-dev` for development and `gdg-cloud-demo-prod` for production.
 
 ---
 
@@ -130,7 +130,7 @@ terraform validate
 ### 3. Dry-Run Planning
 To test plan generation safely without needing live Google Cloud credentials:
 ```bash
-terraform plan -var="project_id=gdg-devfest-demo-dev" -refresh=false
+terraform plan -var="project_id=gdg-cloud-demo-dev" -refresh=false
 ```
 
 ### 4. Post-Deployment Pipeline Verification

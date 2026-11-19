@@ -2,7 +2,7 @@ locals {
   clean_business_unit = replace(var.business_unit, "_", "-")
   clean_project_id    = replace(var.project_id, "_", "-")
 
-  # Adapt core project name (e.g. "gdg-devfest-demo" -> "gdg-devfest-demo-dev")
+  # Adapt core project name (e.g. "gdg-cloud-demo" -> "gdg-cloud-demo-dev")
   env_project_id = (
     endswith(local.clean_project_id, "-${var.env_short}")
     ? local.clean_project_id

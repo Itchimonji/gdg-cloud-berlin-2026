@@ -39,7 +39,7 @@ def store_data(event, context=None):
             "record_id": record_id,
             "timestamp": timestamp,
             "environment": ENVIRONMENT,
-            "event": "gdg-devfest-2026-berlin",
+            "event": "gdg-cloud-berlin-2026",
             "trigger": "cloud-scheduler",
             "message": pubsub_message or "Scheduled execution from Cloud Scheduler via Pub/Sub",
             "status": "success",
@@ -61,7 +61,7 @@ def store_data(event, context=None):
         # 2. Store a lightweight open-source SVG image asset in the GCS bucket
         svg_content = f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="400" height="120">
   <rect width="100%" height="100%" rx="15" fill="#34A853"/>
-  <text x="20" y="45" font-family="Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">GDG DevFest Berlin 2026</text>
+  <text x="20" y="45" font-family="Roboto, sans-serif" font-size="20" font-weight="bold" fill="#ffffff">GDG Cloud Berlin 2026</text>
   <text x="20" y="75" font-family="Roboto, sans-serif" font-size="14" fill="#e8f0fe">CFT Scheduled Cloud Function</text>
   <text x="20" y="100" font-family="monospace" font-size="11" fill="#cbf0f8">ID: {record_id} | Env: {ENVIRONMENT}</text>
 </svg>"""

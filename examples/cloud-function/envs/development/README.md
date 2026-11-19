@@ -17,7 +17,7 @@ terraform init
 # Validate configuration
 terraform validate
 
-# Plan deployment (automatically defaults to gdg-devfest-demo-dev)
+# Plan deployment (automatically defaults to gdg-cloud-demo-dev)
 terraform plan
 
 # Apply changes
@@ -49,7 +49,7 @@ gcloud scheduler jobs run "$SCHEDULER_JOB" \
 
 # Option B: Publish directly to the Pub/Sub Topic
 gcloud pubsub topics publish "$TOPIC_NAME" \
-  --message="Dev test from GDG DevFest Berlin 2026" \
+  --message="Dev test from GDG Cloud Berlin 2026" \
   --project="$PROJECT_ID"
 ```
 
@@ -99,7 +99,7 @@ terraform destroy
 
 | Name | Description |
 |------|-------------|
-| project\_id | The adapted GCP project ID (`gdg-devfest-demo-dev`) |
+| project\_id | The adapted GCP project ID (`gdg-cloud-demo-dev`) |
 | bucket\_name | The name of the created Cloud Storage bucket |
 | bucket\_url | The base URL of the bucket |
 | bucket\_service\_account\_email | The email address of the storage manager service account |

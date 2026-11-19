@@ -32,7 +32,7 @@ When the function entry point (`store_data`) is executed via Pub/Sub:
 2. **Metadata Generation:** Generates an ISO 8601 UTC timestamp and a pseudo-random run ID.
 3. **Structured Telemetry Ingestion:** Uploads a formatted JSON telemetry record to `gs://${BUCKET_NAME}/records/${ENVIRONMENT}/${timestamp}-${record_id}.json` containing:
    - Run ID and execution timestamp
-   - Environment and event metadata (`gdg-devfest-2026-berlin`)
+   - Environment and event metadata (`gdg-cloud-berlin-2026`)
    - Trigger source (`cloud-scheduler`)
 4. **Visual Asset Generation:** Generates and uploads a vector graphic badge (`.svg`) to `gs://${BUCKET_NAME}/images/${ENVIRONMENT}/${timestamp}-${record_id}.svg`.
 5. **Observability:** Logs the resulting Cloud Storage object paths to Cloud Logging for verification.
@@ -41,7 +41,7 @@ When the function entry point (`store_data`) is executed via Pub/Sub:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| project\_id | Core project name (e.g. `gdg-devfest-demo`) or full GCP project ID | `string` | n/a | yes |
+| project\_id | Core project name (e.g. `gdg-cloud-demo`) or full GCP project ID | `string` | n/a | yes |
 | environment | Environment name (`development`, `production`) | `string` | n/a | yes |
 | env\_short | Environment short code (`dev`, `prod`) | `string` | n/a | yes |
 | business\_unit | Business unit identifier (`datacenter_1`) | `string` | n/a | yes |

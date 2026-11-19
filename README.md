@@ -182,9 +182,9 @@ The sample workload deployed by this repository models a production-grade, sched
 - A Google Cloud Project (e.g. `gdg-cloud-demo-dev`)
 - (Optional) [Gemini CLI](https://github.com/google-gemini/gemini-cli) for AI-driven IaC authoring
 
-### 1. Clone Repository and Submodules
+### 1. Clone Repository
 
-Clone this repository and recursively pull the included Google developer skills:
+Clone this repository (Google Cloud Developer Skills are bundled directly under `.gemini/skills/`):
 
 ```bash
 # Clone via SSH
@@ -194,9 +194,6 @@ cd gdg-cloud-berlin-2026
 # Or clone via HTTPS
 git clone https://github.com/Itchimonji/gdg-cloud-berlin-2026.git
 cd gdg-cloud-berlin-2026
-
-# Initialize and update submodules (Google Skills)
-git submodule update --init --recursive
 ```
 
 ### 2. Inspect an Environment
